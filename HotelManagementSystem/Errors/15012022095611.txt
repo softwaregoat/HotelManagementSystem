@@ -1,0 +1,11 @@
+Page :           https://localhost:44309/CheckIn.aspx?room_id=37
+Error Message :  Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Inner Message :  System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider, DateTimeStyles style)
+   at HotelManagementSystem.CheckIn.txtCheckInDate_TextChanged(Object sender, EventArgs e) in E:\Project_2\VisualStudio\JuanGiraldez\HotelManagementSystem-master\HotelManagementSystem\CheckIn.aspx.vb:line 1825
+   at System.Web.UI.WebControls.TextBox.OnTextChanged(EventArgs e)
+   at System.Web.UI.WebControls.TextBox.RaisePostDataChangedEvent()
+   at System.Web.UI.WebControls.TextBox.System.Web.UI.IPostBackDataHandler.RaisePostDataChangedEvent()
+   at System.Web.UI.Page.RaiseChangedEvents()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)

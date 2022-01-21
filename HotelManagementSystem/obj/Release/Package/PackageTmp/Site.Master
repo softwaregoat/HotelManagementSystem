@@ -1,0 +1,353 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="HotelManagementSystem.Site" %>
+ 
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hotel Management System</title>
+    <link rel="icon" href="Assets/Img/favicon.png" type="image/gif" sizes="16x16" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="Assets/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="Assets/bower_components/font-awesome/css/font-awesome.min.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="Assets/bower_components/Ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="Assets/bower_components/select2/dist/css/select2.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="Assets/dist/css/AdminLTE.css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="Assets/dist/css/skins/_all-skins.min.css" />
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="Assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="Assets/bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="Assets/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+    <!-- Pace style -->
+    <link rel="stylesheet" href="Assets/plugins/pace/pace.min.css">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="Assets/HotelManagSys.css" />
+   
+    <!-- ASP HeadContent -->
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+    <!-- ASP HeadContent -->
+</head>
+<body class="hold-transition skin-blue-light sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+               <div class="row" style="background-color:#3c8dbc">
+                   <div class="col-md-3 col-sm-4 col-xs-4">
+                         <asp:HyperLink ID="hplDashboard" CssClass="logo" runat="server" NavigateUrl="~/Dashboard.aspx">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b></b>ERP</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">
+         <%-- Hotel<b>ERP</b>--%>
+          <img src="Assets/Img/logo-small1.png" width="250" height="80" />
+      </span>
+             <a href="#" class="sidebar-toggle" id="maxtoggle" style="color: #fbfbfb!important;" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>   
+            </asp:HyperLink>
+                   </div>
+          <div class="col-md-3 col-sm-8 col-xs-8" >
+               <h2 class="text-center" style="color:#fff;padding-left:5px;"> <asp:Label ID="lblUserFullName"   runat="server" Text=""></asp:Label></h2>
+          </div>
+      
+                 <div class="col-md-6 col-sm-12 col-xs-12">
+                     <%-- <nav class="navbar navbar-static-top">--%>
+                <!-- Sidebar toggle button-->
+               <%-- <a href="#" class="sidebar-toggle" id="minitoggle"  data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>--%>
+                
+               <%-- <div class="navbar-custom-menu">--%>
+                   
+                 <%--   <ul class="nav navbar-nav">
+                        <!-- Control Sidebar Toggle Button -->
+                       
+                        <li>--%>
+                           <h2 class="pull-right" style="color:#fff;padding-right:5px;"> <b id="clockbox"></b> </h2> 
+                        <%--</li>
+                    </ul>--%>
+             <%--   </div>--%>
+
+           <%-- </nav>--%>
+                 </div>  
+            </div>
+            <!-- Header Navbar: style can be found in header.less -->
+           
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" style="padding-top:20px;">
+                  <ul class="sidebar-menu" data-widget="tree">
+                      <li>
+                                <asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl="~/RoomView.aspx"> <i class="fa fa-eye"></i>  <span>Habitaciones</span> </asp:HyperLink>
+                            </li>
+                 <%  
+
+                     lblCYear.Text = "@" + Now.Year.ToString()
+
+                     ExecQuery2("Select distinct p.MainMenu,p.SpanishMenu,u.ROLE_ID,p.MenuID from UserInformation as u inner join UserRoles as r on r.ROLE_ID=u.ROLE_ID  join PermissionsRoleBased as p on p.ROLE_ID=u.ROLE_ID where (u.USER_ID = " & GetUserId() & ") AND (p.AllowUser = 1) And p.MainMenu is not null order by p.MenuID")
+                     ExecQuery("Select u.*,p.SpanishWebForm,p.WebForm,p.AllowUser,p.MainMenu,p.SpanishMenu,p.MenuID,p.PERMISSION_ID,p.MenuIcon from UserInformation as u inner join UserRoles as r on r.ROLE_ID=u.ROLE_ID  join PermissionsRoleBased as p on p.ROLE_ID=u.ROLE_ID where (u.USER_ID = " & GetUserId() & ") AND (p.AllowUser = 1) order by p.MenuID, p.PERMISSION_ID")
+                     If sqlDTxMainMenu.Rows.Count > 0 Then
+                         Dim i As Integer
+                         Dim j As Integer
+                         Dim LastMenu As String%>
+                        <li class="<% If sqlDTxMainMenu.Rows(0)("ROLE_ID") > 1 Then %> hidden <% Else %> show <% End If %>">
+                        <asp:HyperLink ID="hlDashboard" runat="server" NavigateUrl="~/Dashboard.aspx"> <i class="fa fa-tachometer"></i>  <span>Tablero</span> </asp:HyperLink>
+                    </li>
+                        <% For i = 0 To sqlDTxMainMenu.Rows.Count - 1 %>
+                          
+                       
+                      <li class="treeview">
+                        <a href="#">
+                            <i class="<% If sqlDTxMainMenu.Rows(i)("MainMenu") = "Default" Then %> fa fa-gear <% Else If sqlDTxMainMenu.Rows(i)("MainMenu") = "Services" Then %> fa fa-cubes<% Else If sqlDTxMainMenu.Rows(i)("MainMenu") = "Reports" Then %> fa fa-file-text<% Else If sqlDTxMainMenu.Rows(i)("MainMenu") = "Administration" Then %> fa fa-user <% End If %>"></i>
+                            <span><%=sqlDTxMainMenu.Rows(i)("SpanishMenu") %></span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                     
+
+                         <% If sqlDTxMainMenu.Rows(i)("MainMenu") <> LastMenu Then
+                                 sqlDTxSubMenu.Reset()
+                                 ExecQuery3(sqlDTxMainMenu.Rows(i)("MenuID"))
+                                 %>
+
+
+                        <ul class="treeview-menu">
+                              <% If sqlDTxSubMenu.Rows.Count > 0 Then
+                            For j = 0 To sqlDTxSubMenu.Rows.Count - 1%>
+                            <li>
+                                 
+                             <a style="color:black!important" href="<% =sqlDTxSubMenu.Rows(j)("WebForm") %>.aspx"> <i class="<% =sqlDTxSubMenu.Rows(j)("MenuIcon") %>"></i>  <span><%=sqlDTxSubMenu.Rows(j)("SpanishWebForm") %></span></a>
+                                </li>
+                             <% Next
+                        End If
+                                 %>
+                                 <%-- <li>
+                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/EmployeeDetails.aspx"> <i class="fa  fa-users"></i>  <span>Detalle de Usuario</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RoomType.aspx"> <i class="fa  fa-cubes"></i>  <span>Tipo de Habitación</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                 <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/RoomDetails.aspx"> <i class="fa fa-bed"></i>  <span>Detalle de Habitación</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/TAXInfo.aspx"> <i class="fa fa-money"></i>  <span>ITBMS</span> </asp:HyperLink>
+                            </li>
+                              <li>
+                                 <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Promotion.aspx"> <i class="fa fa-angle-up"></i>  <span>Promoción</span> </asp:HyperLink>
+                            </li>--%>
+                      
+               
+                        </ul>
+                    
+                      <% End If %>
+                             
+                      </li>
+                  <%--  <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cubes"></i>
+                            <span>Servicios</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <asp:HyperLink ID="hplCheckIn" runat="server" NavigateUrl="~/CheckIn.aspx"> <i class="fa fa-check-square-o"></i>  <span>Registro</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplExtraServices" runat="server" NavigateUrl="~/ExtraServices.aspx"> <i class="fa fa-cart-plus"></i>  <span>Servicios Extra</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplCheckOut" runat="server" NavigateUrl="~/CheckOut.aspx"> <i class="fa fa-share-square-o"></i>  <span>Consulta de Tarjetas</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplCustomerList" runat="server" NavigateUrl="~/GuestList.aspx"> <i class="fa fa-ticket"></i>  <span>Lista de Huéspedes</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplReservation" runat="server" NavigateUrl="~/Reservation.aspx"> <i class="fa fa-ticket"></i>  <span>Reservación</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplChangeRoom" runat="server" NavigateUrl="~/ChangeRoom.aspx"> <i class="fa  fa-exchange"></i>  <span>Cambio de Habitación</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplUserInfo" runat="server" NavigateUrl="~/AddExtraBed.aspx"> <i class="fa fa-bed"></i>  <span>Añadir Cama Extra</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl="~/RoomView.aspx"> <i class="fa fa-eye"></i>  <span>Habitaciones</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplDirtyRoom" runat="server" NavigateUrl="~/DirtyRoom.aspx"> <i class="fa fa-eraser"></i>  <span>Habitaciones Sucias/span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplAddFoodItem" runat="server" NavigateUrl="~/AddFoodItem.aspx"> <i class="fa fa-spoon"></i>  <span>Añadir Ventas</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="hplFoodServices" runat="server" NavigateUrl="~/FoodServices.aspx"> <i class="fa fa-cutlery"></i>  <span>Servicio Comida</span> </asp:HyperLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-text"></i>
+                            <span>Reportes</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/ServiceReport.aspx"> <i class="fa fa-user-circle-o"></i>  <span>Generación de Reportes</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/FoodServiceReport.aspx"> <i class="fa fa-user-circle-o"></i>  <span>Reportes Comida</span> </asp:HyperLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span>Administración</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                             <li>
+                                <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/UserRoles.aspx"> <i class="fa fa-user-circle-o"></i>  <span>Rol de Usuario</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink16" runat="server" NavigateUrl="~/UserInformation.aspx"> <i class="fa fa-user-circle-o"></i>  <span>Creación de Usuario</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl="~/UsersList.aspx"> <i class="fa fa-th-list"></i>  <span>Lista de Usuarios</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink18" runat="server" NavigateUrl="~/Permission.aspx"> <i class="fa fa-check-circle"></i>  <span>Permisos</span> </asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/SMTP.aspx"> <i class="fa fa-envelope"></i>  <span>SMTP Settings</span> </asp:HyperLink>
+                            </li>
+                        </ul>
+                    </li>--%>
+                  
+              <% Next%>
+                        <li>
+                        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/ChangePassword.aspx"> <i class="fa fa-key"></i>  <span>Cambio de Contraseña</span> </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="hlLogout" runat="server" NavigateUrl="~/LogOut.aspx"> <i class="fa fa-sign-out"></i>  <span>Salir</span> </asp:HyperLink>
+                    </li>
+                 <% End If
+                %>
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+              
+</ul>
+                 
+
+                   
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+
+            <!-- Main content -->
+            <form id="asp_form" runat="server">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+              
+            </form>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+       
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Residencial PTY versión </b> 1.0 <b>  <asp:Label ID="lblCYear" runat="server" Text=""></asp:Label></b>
+            </div>
+            <strong>Para soporte técnico o consulta a <a href="mailto:info@residencialpty.com">info@residencialpty.com</a> </strong>
+        </footer>
+
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery 3 -->
+    <script src="Assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="Assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="Assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Morris.js charts -->
+    <script src="Assets/bower_components/raphael/raphael.min.js"></script>
+    <script src="Assets/bower_components/morris.js/morris.min.js"></script>
+    <!-- Sparkline -->
+    <script src="Assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="Assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="Assets/bower_components/moment/min/moment.min.js"></script>
+    <script src="Assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="Assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="Assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+    <!-- DataTables -->
+    <script src="Assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="Assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- bootstrap time picker -->
+    <script src="Assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <!-- PACE -->
+    <script src="Assets/bower_components/PACE/pace.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="Assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="Assets/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="Assets/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="Assets/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="Assets/dist/js/demo.js"></script>
+    <script src="Assets/jquery.toaster.js"></script>
+     <script src="Assets/DigClock.js"></script>
+    <%--<script src="http://www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+    <script>
+        google.load("language", "1");
+        function initialize() {
+            GetClock();
+            var text = document.getElementById("clockbox").innerHTML;
+            google.language.translate(text, 'es', 'en', function (result) {
+                var translated = document.getElementById("clockbox");
+                if (result.translation) {
+                    translated.innerHTML = result.translation;
+                }
+            });
+        }
+        google.setOnLoadCallback(initialize);
+    </script>--%>
+    <!-- ASP FooterContent -->
+    <asp:ContentPlaceHolder ID="ASPFooterContent" runat="server" />
+    <!-- ASP FooterContent -->
+</body>
+</html>

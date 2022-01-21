@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.dataTables_filter {
+   width: 50%;
+   float: right;
+   text-align: right;
+}
+
+.required_form_item{
+    color: red;
+    font-size: 13px;
+}
+

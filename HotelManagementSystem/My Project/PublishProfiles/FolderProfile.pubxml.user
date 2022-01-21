@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Project_2\VisualStudio\JuanGiraldez\HotelManagementSystem-master\HotelManagementSystem\bin\app.publish\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AddExtraBed.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="AddFoodItem.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="ApplicationInsights.config">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/date.format.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/DigClock.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/dist/css/AdminLTE.css">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/dist/css/AdminLTE.min.css">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/ErrorPage.css">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/FoodServicesCart.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/HotelManagSys.css">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/HotelManagSys.js">
+      <publishTime>01/09/2022 04:02:14</publishTime>
+    </File>
+    <File Include="Assets/Img/ajax-loader.gif">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/alert-32.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/data_preloader.gif">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/exclamation-mark.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/favicon.ico">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/INSIDE LOGO_auto_x2.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/loadingAnim.gif">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/Login-Logo.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/LOGO LOGIN PAGE_auto_x2.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/logo-small.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/logo-small1.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/logo.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/logo1.png">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/splash-multi-color.PNG">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/Img/sqlmicrosoft.svg">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/jquery.toaster.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/jQuery_Validation/.gitignore">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/jQuery_Validation/bower.json">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/jQuery_Validation/CHANGELOG.md">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/jQuery_Validation/js/jquery.validationEngine.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/jQuery_Validation/README.md">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Assets/loader-custom.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="bin/HotelManagementSystem.dll">
+      <publishTime>01/12/2022 09:55:04</publishTime>
+    </File>
+    <File Include="bin/HotelManagementSystem.pdb">
+      <publishTime>01/12/2022 09:55:04</publishTime>
+    </File>
+    <File Include="bin/HotelManagementSystem.xml">
+      <publishTime>01/12/2022 09:55:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/08/2015 03:04:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>03/10/2016 22:26:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>03/10/2016 22:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>03/09/2016 20:00:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>03/10/2016 22:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>03/10/2016 22:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>03/09/2016 19:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 10:06:24</publishTime>
+    </File>
+    <File Include="bin/QRCoder.dll">
+      <publishTime>01/07/2022 21:44:10</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/19/2015 04:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/19/2015 04:19:46</publishTime>
+    </File>
+    <File Include="ChangePassword.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="ChangeRoom.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="check-out.aspx">
+      <publishTime>01/10/2022 23:05:11</publishTime>
+    </File>
+    <File Include="CheckIn.aspx">
+      <publishTime>01/11/2022 10:40:36</publishTime>
+    </File>
+    <File Include="CheckInEdit.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="CheckOut.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Dashboard.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="DataNotFound.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="DirtyRoom.aspx">
+      <publishTime>01/08/2022 11:22:45</publishTime>
+    </File>
+    <File Include="EmployeeDetails.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="ExtraServices.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="FoodServiceReport.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="FoodServices.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="ForgotPassword.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="GuestInformation.aspx">
+      <publishTime>01/09/2022 22:50:27</publishTime>
+    </File>
+    <File Include="GuestList.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="HotelInformation.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="ItemCart.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="LogOut.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="maintenance.html">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="NotFound.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="PasswordReset.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Permission.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Promotion.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rptCheckedIn.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rptCheckIn.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_CheckIn.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_CheckOut.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_ExtraBed.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_ExtraServices.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_FoodServiceItemList.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_FoodServicePaidSales.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_FoodServiceUnPaidSales.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_GuestInformation.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_GuestList.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_GuestListCheckOut.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_PaidBillList.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_RoomChangeHistory.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_SalesReceipt.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reports/rpt_UnPaidBillList.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Reservation.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="RoomDetails.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="RoomType.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="RoomView.aspx">
+      <publishTime>01/10/2022 23:48:03</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.min.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Scripts/moment-with-locales.min.js.map">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Scripts/moment.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Scripts/moment.min.js.map">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="ServiceReport.aspx">
+      <publishTime>01/09/2022 12:21:58</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="SMTP.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="StatusOfRoom.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="TAXInfo.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="UserInformation.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="UserRoles.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="UsersList.aspx">
+      <publishTime>12/15/2021 01:54:01</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/11/2022 10:39:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

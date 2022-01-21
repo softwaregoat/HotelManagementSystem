@@ -1,0 +1,7 @@
+Page :           https://localhost:44309/CheckIn.aspx?room_id=18
+Error Message :  Exception of type 'System.Web.HttpUnhandledException' was thrown.
+Inner Message :  System.NullReferenceException: Object reference not set to an instance of an object.
+   at HotelManagementSystem.CheckIn.Page_Load(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
